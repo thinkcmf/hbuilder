@@ -18,7 +18,7 @@
 
 #ThinkPHP ThinkCMF 模板标签代码块
 # 使用方法
-# 直接在html模板里敲tc，就会自动提示
+# 直接在html模板里敲tc，就会自动提示,tc代表代码块前缀（thinkphp thinkcmf缩写）以防和其它程序标签发生冲突
 # 如foreach标签 ，直接输入tcforeach试试
 
 
