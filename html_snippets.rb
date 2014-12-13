@@ -1,5 +1,5 @@
 # +----------------------------------------------------------------------
-# | ThinkCMF ThinkPHP HBuilder代码块
+# | ThinkPHP ThinkCMF HBuilder代码块
 # +----------------------------------------------------------------------
 # | ThinkCMF[ WE CAN DO IT MORE SIMPLE ]
 # +----------------------------------------------------------------------
@@ -16,11 +16,12 @@
 # 打开HBuilder 工具》扩展代码块》html代码
 # 在最后加上html_snippets.rb文件里的代码，如果已经加入，请覆盖升级
 
+#ThinkPHP ThinkCMF 模板标签代码块
 # 使用方法
 # 直接在html模板里敲tc，就会自动提示
 # 如foreach标签 ，直接输入tcforeach试试
 
-#ThinkCMF ThinkPHP 模板标签代码块
+
 with_defaults :scope => 'text.html text' do |bundle|  #=====HTML标签代码块================================================================================
 
   snippet 'tcforeach' do |cmd|  #tcforeach是显示名称，代码助手提示列表显示时可见
@@ -146,7 +147,7 @@ with_defaults :scope => 'text.html text' do |bundle|  #=====HTML标签代码块=
   snippet 'tcimport' do |cmd|  #tcimport是显示名称，代码助手提示列表显示时可见
     cmd.trigger = 'tcimport'        #tcimport是激活字符，即按下tcimport后会触发该代码块
     cmd.expansion = '<import file="$1" type="js$2">
-    $0    
+    $0
 </import>'
     cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
   end #import代码块结束
@@ -154,7 +155,7 @@ with_defaults :scope => 'text.html text' do |bundle|  #=====HTML标签代码块=
   snippet 'tcload' do |cmd|  #tcload是显示名称，代码助手提示列表显示时可见
     cmd.trigger = 'tcload'        #tcload是激活字符，即按下tcload后会触发该代码块
     cmd.expansion = '<load href="$1">
-    $0    
+    $0
 </load>'
     cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
   end #load代码块结束
@@ -162,7 +163,7 @@ with_defaults :scope => 'text.html text' do |bundle|  #=====HTML标签代码块=
   snippet 'tcjs' do |cmd|  #tcjs是显示名称，代码助手提示列表显示时可见
     cmd.trigger = 'tcjs'        #tcjs是激活字符，即按下tcjs后会触发该代码块
     cmd.expansion = '<js href="$1">
-    $0    
+    $0
 </js>'
     cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
   end #js代码块结束
@@ -170,7 +171,7 @@ with_defaults :scope => 'text.html text' do |bundle|  #=====HTML标签代码块=
   snippet 'tccss' do |cmd|  #tccss是显示名称，代码助手提示列表显示时可见
     cmd.trigger = 'tccss'        #tccss是激活字符，即按下tccss后会触发该代码块
     cmd.expansion = '<css href="$1">
-    $0    
+    $0
 </css>'
     cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
   end #css代码块结束
@@ -178,7 +179,7 @@ with_defaults :scope => 'text.html text' do |bundle|  #=====HTML标签代码块=
   snippet 'tctcinclude' do |cmd|  #tctcinclude是显示名称，代码助手提示列表显示时可见
     cmd.trigger = 'tctcinclude'        #tctcinclude是激活字符，即按下tctcinclude后会触发该代码块
     cmd.expansion = '<tc_include file="$1">
-    $0    
+    $0
 </tc_include>'
     cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
   end #tcinclude代码块结束
@@ -186,11 +187,37 @@ with_defaults :scope => 'text.html text' do |bundle|  #=====HTML标签代码块=
   snippet 'tcinclude' do |cmd|  #tcinclude是显示名称，代码助手提示列表显示时可见
     cmd.trigger = 'tcinclude'        #tcinclude是激活字符，即按下tcinclude后会触发该代码块
     cmd.expansion = '<include file="$1">
-    $0    
+    $0
 </include>'
     cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
   end #include代码块结束
+  
+  snippet 'tcliteral' do |cmd|  #tcliteral是显示名称，代码助手提示列表显示时可见
+    cmd.trigger = 'tcliteral'        #tcliteral是激活字符，即按下tcliteral后会触发该代码块
+    cmd.expansion = '<literal>
+    $0
+</literal>'
+    cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
+  end #literal代码块结束
+  
+  snippet 'tcroot' do |cmd|  #tcroot是显示名称，代码助手提示列表显示时可见
+    cmd.trigger = 'tcroot'        #tcroot是激活字符，即按下tcroot后会触发该代码块
+    cmd.expansion = '__ROOT__'
+    cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
+  end #root代码块结束
+  
+  snippet 'tctmpl' do |cmd|  #tctmpl是显示名称，代码助手提示列表显示时可见
+    cmd.trigger = 'tctmpl'        #tctmpl是激活字符，即按下tctmpl后会触发该代码块
+    cmd.expansion = '__TMPL__'
+    cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
+  end #tmpl代码块结束
+  
+  snippet 'tcstatics' do |cmd|  #tcstatics是显示名称，代码助手提示列表显示时可见
+    cmd.trigger = 'tcstatics'        #tcstatics是激活字符，即按下tcstatics后会触发该代码块
+    cmd.expansion = '__STATICS__'
+    cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
+  end #statics代码块结束
 
 end
 
-#ThinkCMF ThinkPHP 模板标签代码块结束
+#ThinkPHP ThinkCMF 模板标签代码块结束
